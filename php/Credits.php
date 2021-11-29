@@ -10,24 +10,26 @@
   <?php include '../php/Menus.php' ?>
   <section class="main" id="s1">
     <div>
+      <h1>Esto es el Trabajo Final de Mikel Morillo</h1><br>
+      <h1>continuando el trabajo de:</h1><br><br>
 
-      <h2>Nombre y Apellidos: Unai Salas y Mikel Morillo</h2>
+      <h4>Nombre y Apellidos: Unai Salas y Mikel Morillo</h4>
       <br />
-      <h2>Especialidad cursada en del grado: Computacion e Ingeniería de Computadores</h2>
+      <h4>Especialidad cursada en del grado: Computacion e Ingeniería de Computadores</h4>
       <br />
-      <h2>Foto o Avatar</h2>
+      <h4>Foto o Avatar</h4>
       <br>
       <img src="../images/MikelMorillo.jpg" width="10%" height="10%"/>
       <img src="../images/UnaiSalas.jpg" width="10%" height="10%"/>
 
 
-      <h3>DATOS DEL AUTOR/AUTORES DEL PROYECTO MIGRADO</h3>
+      <h5>DATOS DEL AUTOR/AUTORES DEL PROYECTO MIGRADO</h5>
       <br>
-      <h3>Nombre y Apellidos: Ander Carrera y Agustín Barruti</h3>
+      <h5>Nombre y Apellidos: Ander Carrera y Agustín Barruti</h5>
       <br>
-      <h3>Especialidad cursada en el grado: Ingeniería Informática en Computación</h3>
+      <h5>Especialidad cursada en el grado: Ingeniería Informática en Computación</h5>
       <br>
-      <h3>Foto o Avatar</h3>
+      <h5>Foto o Avatar</h5>
       <br>
       <img src="../images/acarrera.jpg" width="5%" height="5%" >
       <img src="../images/abarruti.jpg" width="5%" height="5%">

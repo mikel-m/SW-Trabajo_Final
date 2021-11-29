@@ -63,7 +63,10 @@
               if(!$conn){
                 die("Connection failed: " . mysqli_connect_error());
               }
-              $sql = "SELECT * from users where correo = '$correo' and pass = '$userpass'";
+
+              // comprobar password cifrado
+              $hash = password_hash($userpass, PASSWORD_DEFAULT, ['cost' => 20]);
+              $sql = "SELECT * from users where correo = '$correo' and pass = '$hash'";
               $logear = mysqli_query($conn, $sql) or die(mysqli_error($conn));
               $row = mysqli_fetch_array($logear, MYSQLI_ASSOC) ; //Lo convertimos a array
 
@@ -74,7 +77,7 @@
               else{
                 //Logear al usuario
                 //printf ("%s (%s)\n", $row["correo"], $row["pass"]);
-                if(($row['correo'] == $correo) && ($row['pass'] == $userpass)){
+                if(($row['correo'] == $correo) && ($row['pass'] == $hash)){
                   if($row['estado']=='Activo'){
                     $_SESSION['correo']=$row['correo'];
                     $_SESSION['nombre']=$row['nom'];

@@ -146,7 +146,12 @@
                 if(!$conn){
                   die("Connection failed: " . mysqli_connect_error());
                 }
-                $sql = "INSERT INTO users (tipouser, correo, nom, apell, pass, estado, img) VALUES ('$tipoUser', '$correo', '$nom', '$apell', '$userpass', 'Activo', '$imagen_dir')";
+
+
+                // https://diego.com.es/encriptacion-y-contrasenas-en-php
+                //cifrar contraseña
+                $hash = password_hash($userpass, PASSWORD_DEFAULT, ['cost' => 20]);
+                $sql = "INSERT INTO users (tipouser, correo, nom, apell, pass, estado, img) VALUES ('$tipoUser', '$correo', '$nom', '$apell', '$hash', 'Activo', '$imagen_dir')";
                 $anadir = mysqli_query($conn, $sql);
                 if(!$anadir){
                   echo "<h3>Se ha producido un error al intentar registrar al usuario. :(</h3>";
