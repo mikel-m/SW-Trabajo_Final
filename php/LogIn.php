@@ -65,7 +65,7 @@
               }
 
               // comprobar password cifrado
-              $hash = password_hash($userpass, PASSWORD_DEFAULT, ['cost' => 20]);
+              $hash = password_hash($userpass, PASSWORD_DEFAULT);
               $sql = "SELECT * from users where correo = '$correo' and pass = '$hash'";
               $logear = mysqli_query($conn, $sql) or die(mysqli_error($conn));
               $row = mysqli_fetch_array($logear, MYSQLI_ASSOC) ; //Lo convertimos a array
