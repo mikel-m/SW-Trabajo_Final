@@ -74,7 +74,7 @@
 
               //if(!$row){
               echo 'row: ' . $row['pass'] . '<br>';
-              if(!password_verify($row['pass'], $hash)){
+              if(!password_verify($row['pass'], $userpass)){
                 echo "<h3>Datos de login incorrectos. :(</h3>";
                 echo "<br>";
               }
