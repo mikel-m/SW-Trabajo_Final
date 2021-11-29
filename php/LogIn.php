@@ -65,7 +65,9 @@
               }
 
               // comprobar password cifrado
+              //https://programacionconphp.com/encriptar-contrasena-en-php/
               $hash = password_hash($userpass, PASSWORD_DEFAULT);
+              echo 'alert(hash: ' . $hash . ')';
               $sql = "SELECT * from users where correo = '$correo' and pass = '$hash'";
               $logear = mysqli_query($conn, $sql) or die(mysqli_error($conn));
               $row = mysqli_fetch_array($logear, MYSQLI_ASSOC) ; //Lo convertimos a array
