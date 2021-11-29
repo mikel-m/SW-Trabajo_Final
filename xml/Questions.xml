@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ShowXmlQuestions.xsl" ?>
+<assessmentItems>
+  <assesmentItem subject="eso" author="paca001@ikasle.ehu.eus">
+    <itemBody>
+      <p>La pregunta es esta</p>
+    </itemBody>
+    <correctResponse>
+      <response>1</response>
+    </correctResponse>
+    <incorrectResponses>
+      <response>2</response>
+      <response>3</response>
+      <response>4</response>
+    </incorrectResponses>
+  </assesmentItem>
+  <assesmentItem subject="eso" author="paca001@ikasle.ehu.eus">
+    <itemBody>
+      <p>La pregunta es esta</p>
+    </itemBody>
+    <correctResponse>
+      <response>1</response>
+    </correctResponse>
+    <incorrectResponses>
+      <response>2</response>
+      <response>3</response>
+      <response>4</response>
+    </incorrectResponses>
+  </assesmentItem>
+</assessmentItems>

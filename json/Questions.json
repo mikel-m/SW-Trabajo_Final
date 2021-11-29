@@ -1,0 +1,38 @@
+{
+    "assessmentItems": [
+        {
+            "subject": "Web",
+            "author": "vadillo001@ikasle.ehu.eus",
+            "itemBody": {
+                "p": "Tag HTML para incluir un enlace"
+            },
+            "correctResponse": {
+                "value": "A"
+            },
+            "incorrectResponses": {
+                "value": [
+                    "OBJECT",
+                    "TABLE",
+                    "DIV"
+                ]
+            }
+        },
+        {
+            "subject": "Web",
+            "author": "rarruabarrena001@ikasle.ehu.eus",
+            "itemBody": {
+                "p": "Formato de datos menos pesado"
+            },
+            "correctResponse": {
+                "value": "CSV"
+            },
+            "incorrectResponses": {
+                "value": [
+                    "JSON",
+                    "XML",
+                    "HTML"
+                ]
+            }
+        }
+    ]
+}
