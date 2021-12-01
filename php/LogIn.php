@@ -67,13 +67,14 @@
               // comprobar password cifrado
               //https://programacionconphp.com/encriptar-contrasena-en-php/
               $hash = password_hash($userpass, PASSWORD_BCRYPT);
-              echo 'hash: ' . $hash . '<br>';
               $sql = "SELECT * from users where correo = '$correo'";
               $logear = mysqli_query($conn, $sql) or die(mysqli_error($conn));
               $row = mysqli_fetch_array($logear, MYSQLI_ASSOC) ; //Lo convertimos a array
 
               //if(!$row){
+              echo 'userpass: ' . $userpass;
               echo 'row: ' . $row['pass'] . '<br>';
+              echo 'password_verify: ' . password_verify($userpass, $row['pass']);
               if(!password_verify($userpass, $row['pass'])){
                 echo "<h3>Datos de login incorrectos. :(</h3>";
                 echo "<br>";
