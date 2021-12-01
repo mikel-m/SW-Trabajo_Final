@@ -65,7 +65,9 @@
               }
 
               // comprobar password cifrado
-              //https://programacionconphp.com/encriptar-contrasena-en-php/
+              // https://programacionconphp.com/encriptar-contrasena-en-php/
+              // cifrar contraseña + PDO
+              // https://www.baulphp.com/cifrar-contrasenas-usando-php-pdo-completo/
               $sql = "SELECT * from users where correo = '$correo'";
               $logear = mysqli_query($conn, $sql) or die(mysqli_error($conn));
               $row = mysqli_fetch_array($logear, MYSQLI_ASSOC) ; //Lo convertimos a array

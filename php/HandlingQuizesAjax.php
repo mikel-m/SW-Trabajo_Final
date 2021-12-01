@@ -33,7 +33,7 @@
             <tr>
               <td align="right">Dirección de correo (*): </td>
               <?php if (isset($_GET['correo'])){                                           
-                echo '<td align="left"><input type="text" id="correo" name="correo" autofocus value ="'.$_GET["correo"].'"></td>';
+                echo '<td align="left"><input type="text" id="correo" disabled="disabled" name="correo" autofocus value ="'.$_SESSION['correo'].'"></td>';
                }else{ ?>  
                 <td align="left"><input type="text" id="correo" name="correo" autofocus></td>
               <?php }?>
