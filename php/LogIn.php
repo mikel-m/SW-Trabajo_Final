@@ -71,10 +71,10 @@
               $row = mysqli_fetch_array($logear, MYSQLI_ASSOC) ; //Lo convertimos a array
 
               //if(!$row){
-              echo 'userpass: ' . $userpass;
+              echo 'userpass: ' . $userpass . '<br>';
               echo 'row: ' . $row['pass'] . '<br>';
-              echo 'password_verify: ' . password_verify($userpass, $row['pass']);
-              if(!password_verify($userpass, $row['pass'])){
+              echo 'password_verify: ' . password_verify($userpass, $row['pass']) . '<br>';
+              if(password_verify($userpass, $row['pass'])){
                 echo "<h3>Datos de login incorrectos. :(</h3>";
                 echo "<br>";
               }
