@@ -82,11 +82,11 @@
                 echo 'pass_verify es diferente a 1<br>';
               }
               echo 'password_verify: ' . $pass_verify . '<br>';
-              if($pass_verify != 1){
+              
+              if(!password_verify($userpass, $row['pass'])){
                 echo "<h3>Datos de login incorrectos. :(</h3>";
                 echo "<br>";
-              }
-              else{
+              } else{
                 //Logear al usuario
                 //printf ("%s (%s)\n", $row["correo"], $row["pass"]);
                 if(($row['correo'] == $correo) && ($row['pass'] == $hash)){
