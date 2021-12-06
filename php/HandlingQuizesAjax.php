@@ -35,7 +35,9 @@
               <?php //if (isset($_GET['correo'])){                                           
                 //echo '<td align="left"><input type="text" id="correo" name="correo" autofocus value ="'.$_SESSION['correo'].'" readonly="readonly"></td>';
                //}else{ ?> 
-                <td align="left"><input type="text" id="correo" name="correo" value=$_SESSION['correo'] disable></td>
+               <?php
+                echo '<td align="left"><input type="text" id="correo" name="correo" value="' . $_SESSION['correo'] . '" readonly></td>';
+              ?>
               <?php //}?>
             </tr>
             <tr>
