@@ -32,11 +32,11 @@
             </caption>
             <tr>
               <td align="right">Dirección de correo (*): </td>
-              <?php if (isset($_GET['correo'])){                                           
-                echo '<td align="left"><input type="text" id="correo" name="correo" autofocus value ="'.$_SESSION['correo'].'" readonly="readonly"></td>';
-               }else{ ?>  
-                <td align="left"><input type="text" id="correo" name="correo" autofocus readonly="readonly"></td>
-              <?php }?>
+              <?php //if (isset($_GET['correo'])){                                           
+                //echo '<td align="left"><input type="text" id="correo" name="correo" autofocus value ="'.$_SESSION['correo'].'" readonly="readonly"></td>';
+               //}else{ ?> 
+                <td align="left"><input type="text" id="correo" name="correo" value=$_SESSION['correo'] disable></td>
+              <?php //}?>
             </tr>
             <tr>
               <td align="right">Enunciado de la pregunta (*): </td>
