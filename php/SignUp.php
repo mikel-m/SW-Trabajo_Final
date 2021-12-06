@@ -172,8 +172,7 @@
         }
         ?>
         <script>
-          /*alert("Entra");
-          var x = document.getElementById("fregister");
+          /*var x = document.getElementById("fregister");
           x.addEventListener("focusout", comprobarCorreo);
           function comprobarCorreo(){
             var soapclient = new SoapClient("http://ehusw.es/jav/ServiciosWeb/comprobarmatricula.php?wsdl");
@@ -188,7 +187,6 @@
 
         <!-- Lab 7 -->
         <?php
-        /*
           $correo = $_POST['correo'];
           //instanciamos el objeto SoapClient con el WSDL del servicio
           $soapclient = new SoapClient('http://ehusw.es/jav/ServiciosWeb/comprobarmatricula.php?wsdl');
@@ -198,7 +196,6 @@
           if (isset($_POST['botonReg'])){
             echo '<h3> El correo ' . $correo . $soapclient->comprobar($correo) . ' existe </h3>';
           }
-          */
         ?>
         <script>
           function blurFunction(){
