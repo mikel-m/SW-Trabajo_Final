@@ -90,7 +90,8 @@
               if(password_verify($userpass, $row['pass']) == 1){
                 //Logear al usuario
                 //printf ("%s (%s)\n", $row["correo"], $row["pass"]);
-                if(($row['correo'] == $correo) && ($row['pass'] == $hash)){
+                //if(($row['correo'] == $correo) && ($row['pass'] == $hash)){
+                if(($row['correo'] == $correo)){
                   if($row['estado']=='Activo'){
                     $_SESSION['correo']=$row['correo'];
                     $_SESSION['nombre']=$row['nom'];
