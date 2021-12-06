@@ -83,10 +83,11 @@
               }
               echo 'password_verify: ' . $pass_verify . '<br>';
               
-              if(password_verify($userpass, $row['pass']) === FALSE){
+              /*if(password_verify($userpass, $row['pass']) === FALSE){
                 echo "<h3>Datos de login incorrectos. :(</h3>";
                 echo "<br>";
-              } else{
+              } else{*/
+              if(password_verify($userpass, $row['pass'])){
                 //Logear al usuario
                 //printf ("%s (%s)\n", $row["correo"], $row["pass"]);
                 if(($row['correo'] == $correo) && ($row['pass'] == $hash)){
@@ -115,7 +116,11 @@
                   echo "<h3>Datos de login incorrectos. :(</h3>";
                   echo "<br>";
                 }
-              } /*// LAB 7 DE SEGURIDAD BASADA EN SESIONES
+              } else {
+                echo "<h3>Datos de login incorrectos. :(</h3>";
+                echo "<br>";
+              }
+               /*// LAB 7 DE SEGURIDAD BASADA EN SESIONES
                 // https://obedalvarado.pw/blog/formulario-inicio-sesion-php-mysql/
 
                 //Logear al usuario
