@@ -83,7 +83,7 @@
               }
               echo 'password_verify: ' . $pass_verify . '<br>';
               
-              if(!password_verify($userpass, $row['pass'])){
+              if(password_verify($userpass, $row['pass']) === FALSE){
                 echo "<h3>Datos de login incorrectos. :(</h3>";
                 echo "<br>";
               } else{

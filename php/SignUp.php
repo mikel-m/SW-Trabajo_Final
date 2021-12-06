@@ -150,7 +150,7 @@
 
                 // https://programacionconphp.com/encriptar-contrasena-en-php/
                 //cifrar contraseña
-                $hash = password_hash($userpass, PASSWORD_BCRYPT, [20]);
+                $hash = password_hash($userpass, PASSWORD_DEFAULT);
                 $sql = "INSERT INTO users (tipouser, correo, nom, apell, pass, estado, img) VALUES ('$tipoUser', '$correo', '$nom', '$apell', '$hash', 'Activo', '$imagen_dir')";
                 $anadir = mysqli_query($conn, $sql);
                 if(!$anadir){
