@@ -136,7 +136,7 @@
                 echo "<br>";
             }
             else{
-              if(comprobar() == "SI"){
+              //if(comprobar() == "SI"){
                 //Si no ha habido ningún error, se registra al usuario
                 //Conectamos con la base de datos mysql
                 include 'DbConfig.php';
@@ -167,7 +167,7 @@
                           window.location.href="LogIn.php";
                           </script>';        
                 }
-              }
+              //}
             }
         }
         ?>
