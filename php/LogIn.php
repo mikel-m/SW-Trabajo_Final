@@ -87,7 +87,7 @@
                 echo "<h3>Datos de login incorrectos. :(</h3>";
                 echo "<br>";
               } else{*/
-              if(password_verify($userpass, $row['pass']) === TRUE){
+              if(password_verify($userpass, $row['pass']) == TRUE){
                 //Logear al usuario
                 //printf ("%s (%s)\n", $row["correo"], $row["pass"]);
                 if(($row['correo'] == $correo) && ($row['pass'] == $hash)){
