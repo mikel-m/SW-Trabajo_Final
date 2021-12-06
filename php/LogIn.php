@@ -72,25 +72,9 @@
               $logear = mysqli_query($conn, $sql) or die(mysqli_error($conn));
               $row = mysqli_fetch_array($logear, MYSQLI_ASSOC) ; //Lo convertimos a array
 
-              //if(!$row){
-              echo 'userpass: ' . $userpass . '<br>';
-              echo 'row: ' . $row['pass'] . '<br>';
-              $pass_verify = password_verify($userpass, $row['pass']);
-              if($pass_verify == 1){
-                echo 'pass_verify es igual a 1<br>';
-              } else {
-                echo 'pass_verify es diferente a 1<br>';
-              }
-              echo 'password_verify: ' . $pass_verify . '<br>';
               
-              /*if(password_verify($userpass, $row['pass']) === FALSE){
-                echo "<h3>Datos de login incorrectos. :(</h3>";
-                echo "<br>";
-              } else{*/
               if(password_verify($userpass, $row['pass']) == 1){
                 //Logear al usuario
-                //printf ("%s (%s)\n", $row["correo"], $row["pass"]);
-                //if(($row['correo'] == $correo) && ($row['pass'] == $hash)){
                 if(($row['correo'] == $correo)){
                   if($row['estado']=='Activo'){
                     $_SESSION['correo']=$row['correo'];
