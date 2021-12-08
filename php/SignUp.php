@@ -139,7 +139,7 @@
               //if(comprobar() == "SI"){
                 //Si no ha habido ningún error, se registra al usuario
                 //Conectamos con la base de datos mysql
-                include 'DbConfig.php';
+                //include 'DbConfig.php';
                 /*
                 $conn = mysqli_connect($server, $user, $pass, $basededatos);
                 $conn->set_charset("utf8");
@@ -152,7 +152,7 @@
 
                 // https://programacionconphp.com/encriptar-contrasena-en-php/
                 //cifrar contraseña
-                $hash = password_hash($userpass, PASSWORD_DEFAULT);
+                //$hash = password_hash($userpass, PASSWORD_DEFAULT);
                 /*
                 $sql = "INSERT INTO users (tipouser, correo, nom, apell, pass, estado, img) VALUES ('$tipoUser', '$correo', '$nom', '$apell', '$hash', 'Activo', '$imagen_dir')";
                 $anadir = mysqli_query($conn, $sql);
@@ -172,6 +172,7 @@
 
                 // PDO
                 // Abrir una conexión a MySql
+                include 'DbConfig.php';
                 try{
                   $dsn = "mysql:host=$server;dbname=$basededatos";
                   $dbh = new PDO($dsn, $user, $pass);
@@ -185,6 +186,7 @@
                 $stmt->bindParam(2, $correo);
                 $stmt->bindParam(3, $nom);
                 $stmt->bindParam(4, $apell);
+                $hash = password_hash($userpass, PASSWORD_DEFAULT);
                 $stmt->bindParam(5, $hash);
                 $activo = "Activo";
                 $stmt->bindParam(6, $activo);

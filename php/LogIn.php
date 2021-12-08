@@ -54,6 +54,7 @@
                 echo "<a href='LogIn.php'>";
             }
             else{
+              /*
               //Si no ha habido ningún error, se INTENTA logear al usuario
               //Conectamos con la base de datos mysql
               include 'DbConfig.php';
@@ -105,7 +106,7 @@
                 echo "<h3>Datos de login incorrectos. :(</h3>";
                 echo "<br>";
               }
-               /*// LAB 7 DE SEGURIDAD BASADA EN SESIONES
+                // LAB 7 DE SEGURIDAD BASADA EN SESIONES
                 // https://obedalvarado.pw/blog/formulario-inicio-sesion-php-mysql/
 
                 //Logear al usuario
@@ -131,8 +132,53 @@
                   echo "<br>";
                 }
               } 
-              $conn->close();*/
               $conn->close();
+              $conn->close();
+              */
+
+              // PDO
+              include 'DbConfig.php';
+              try{
+                $dsn = "mysql:host=$server;dbname=$basededatos";
+                $dbh = new PDO($dsn, $user, $pass);
+              } catch (PDOException $e){
+                echo $e->getMessage();
+              }
+              // FETCH_OBJ
+              $stmt = $dbh->prepare("SELECT * from users where correo = '$correo'");
+              $stmt->setFetchMode(PDO::FETCH_OBJ);
+              // ejecutamos
+              $stmt->execute();
+              if(password_verify($userpass, $row->pass) == 1){
+                if($row->estado=='Activo'){
+                  $_SESSION['correo']=$row->correo;
+                  $_SESSION['nombre']=$row->nom;
+                  $_SESSION['apellido']=$row->apell;
+                  $_SESSION['imagen']=$row->img;
+                  $_SESSION['estado']=$row->estado;
+                  if($correo == 'admin@ehu.es'){
+                    $_SESSION['tipo']='admin';
+                  }else{
+                    $_SESSION['tipo']=$row->tipouser;
+                  }
+                  $dbh = null;
+                  echo '<script type="text/javascript"> alert("Bienvenido al Sistema: '. $_SESSION['correo'] .' ");
+                          window.location.href="Layout.php";
+                          </script>';
+                } else {
+                  $dbh = null;
+                  echo '<script>
+                      alert("Este usuario está bloqueado");
+                      window.location.href="Layout.php";
+                    </script>';
+                }
+              } else {
+                $dbh = null;
+                echo "<h3>Datos de login incorrectos. :(</h3>";
+                echo "<br>";
+              }
+              // cerrar conexión
+              //$dbh = null;
           }
         }
         ?>
