@@ -150,9 +150,8 @@
 
                 // https://programacionconphp.com/encriptar-contrasena-en-php/
                 //cifrar contraseña
-                echo 'userpass: '.$userpass;
                 $hash = password_hash($userpass, PASSWORD_DEFAULT);
-                echo 'userpass: '.$hash;
+                /*
                 $sql = "INSERT INTO users (tipouser, correo, nom, apell, pass, estado, img) VALUES ('$tipoUser', '$correo', '$nom', '$apell', '$hash', 'Activo', '$imagen_dir')";
                 $anadir = mysqli_query($conn, $sql);
                 if(!$anadir){
@@ -167,7 +166,31 @@
                           window.location.href="LogIn.php";
                           </script>';        
                 }
-              //}
+                */
+
+                // PDO
+                // Abrir una conexión a MySql
+                try{
+                  $dsn = "mysql:host=$server;dbname=$basededatos";
+                  $dbh = new PDO($dsn, $user, $password);
+                } catch (PDOException $e){
+                  echo $e->getMessage();
+                }
+                // prepare
+                $stmt = $dbh->prepare("INSERT INTO users (tipouser, correo, nom, apell, pass, estado, img) VALUES (?, ?, ?, ?, ?, ?, ?)");
+                // bind
+                stmt->bindParam(1, $tipoUser);
+                stmt->bindParam(2, $correo);
+                stmt->bindParam(3, $nom);
+                stmt->bindParam(4, $apell);
+                stmt->bindParam(5, $hash);
+                $activo = "Activo";
+                stmt->bindParam(6, $activo);
+                stmt->bindParam(7, $imagen_dir);
+                // Execute
+                stmt->execute();
+                // cerrar conexión
+                $dbh = null;
             }
         }
         ?>
