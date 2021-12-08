@@ -149,6 +149,7 @@
               $stmt->setFetchMode(PDO::FETCH_OBJ);
               // ejecutamos
               $stmt->execute();
+              echo $row->pass;
               if(password_verify($userpass, $row->pass) == 1){
                 if($row->estado=='Activo'){
                   $_SESSION['correo']=$row->correo;
