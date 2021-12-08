@@ -176,9 +176,6 @@
                     </script>';
                 }
               } else {
-                echo 'userpass: ' . $userpass; echo '<br>';
-                echo 'row->pass: ' . $row->pass; echo '<br>';
-                echo 'password_verify: ' . password_verify($userpass, $row->pass); echo '<br>';
                 $dbh = null;
                 echo "<h3>Datos de login incorrectos. :(</h3>";
                 echo "<br>";
