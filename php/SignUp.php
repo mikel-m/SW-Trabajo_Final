@@ -140,12 +140,14 @@
                 //Si no ha habido ningún error, se registra al usuario
                 //Conectamos con la base de datos mysql
                 include 'DbConfig.php';
+                /*
                 $conn = mysqli_connect($server, $user, $pass, $basededatos);
                 $conn->set_charset("utf8");
 
                 if(!$conn){
                   die("Connection failed: " . mysqli_connect_error());
                 }
+                */
 
 
                 // https://programacionconphp.com/encriptar-contrasena-en-php/
