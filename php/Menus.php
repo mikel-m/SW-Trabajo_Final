@@ -7,7 +7,7 @@
   <span class="right"><a href="SignUp.php">Registro</a></span>
   <span class="right"><a href="LogIn.php">Login</a></span>
   <?php }else{ ?>
-  <span class="right"><a href="LogOut.php">Logout</a><?php echo '<img src="'.$_SESSION['imagen']. ' " width="50" height="50">'; ?></span>
+  <span class="right"><a href="LogOut.php">Logout</a> <?php echo ' ' . $_SESSION['correo']; echo '<img src="'.$_SESSION['imagen']. ' " width="50" height="50">'; ?></span>
   <?php } ?>
 
 </header>
