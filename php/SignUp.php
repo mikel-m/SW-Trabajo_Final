@@ -191,8 +191,13 @@
                 $stmt->bindParam(7, $imagen_dir);
                 // Execute
                 $stmt->execute();
+                move_uploaded_file($imagen_loc_tmp, $imagen_dir);     
                 // cerrar conexión
-                $dbh = null;
+                $dbh = null; 
+                echo '<script type="text/javascript"> alert("Se ha realizado el registro de forma correcta");
+                         window.location.href="LogIn.php";
+                      </script>';
+                
             }
         }
         ?>
