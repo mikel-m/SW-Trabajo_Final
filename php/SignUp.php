@@ -174,7 +174,7 @@
                 // Abrir una conexión a MySql
                 try{
                   $dsn = "mysql:host=$server;dbname=$basededatos";
-                  $dbh = new PDO($dsn, $user, $password);
+                  $dbh = new PDO($dsn, $user, $pass);
                 } catch (PDOException $e){
                   echo $e->getMessage();
                 }
