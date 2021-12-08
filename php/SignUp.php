@@ -173,7 +173,7 @@
                 // PDO
                 // Abrir una conexión a MySql
                 try{
-                  $dsn = "mysql:host=" . $server . ";dbname=" . $basededatos;
+                  $dsn = "mysql:host=$server;dbname=$basededatos";
                   $dbh = new PDO($dsn, $user, $pass);
                 } catch (PDOException $e){
                   echo $e->getMessage();
@@ -181,16 +181,16 @@
                 // prepare
                 $stmt = $dbh->prepare("INSERT INTO users (tipouser, correo, nom, apell, pass, estado, img) VALUES (?, ?, ?, ?, ?, ?, ?)");
                 // bind
-                stmt->bindParam(1, $tipoUser);
-                stmt->bindParam(2, $correo);
-                stmt->bindParam(3, $nom);
-                stmt->bindParam(4, $apell);
-                stmt->bindParam(5, $hash);
+                $stmt->bindParam(1, $tipoUser);
+                $stmt->bindParam(2, $correo);
+                $stmt->bindParam(3, $nom);
+                $stmt->bindParam(4, $apell);
+                $stmt->bindParam(5, $hash);
                 $activo = "Activo";
-                stmt->bindParam(6, $activo);
-                stmt->bindParam(7, $imagen_dir);
+                $stmt->bindParam(6, $activo);
+                $stmt->bindParam(7, $imagen_dir);
                 // Execute
-                stmt->execute();
+                $stmt->execute();
                 // cerrar conexión
                 $dbh = null;
             }
