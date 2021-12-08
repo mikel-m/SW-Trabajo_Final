@@ -145,10 +145,12 @@
                 echo $e->getMessage();
               }
               // FETCH_OBJ
-              $stmt = $dbh->prepare("SELECT * FROM users WHERE correo=?");
+              $stmt = $dbh->prepare("SELECT * FROM users WHERE correo = ?");
+              $stmt->bindParam(1, $correo);
+              // Especificamos el fetch mode antes de llamar a fetch()
               $stmt->setFetchMode(PDO::FETCH_OBJ);
               // ejecutamos
-              $stmt->execute([$correo]);
+              $stmt->execute();
               if(password_verify($userpass, $row->pass) == 1){
                 if($row->estado=='Activo'){
                   $_SESSION['correo']=$row->correo;
