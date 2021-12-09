@@ -172,7 +172,7 @@
                   $dbh = null;
                   echo '<script>
                       alert("Este usuario está bloqueado");
-                      window.location.href="Layout.php";
+                      window.location.href="LogIn.php";
                     </script>';
                 }
               } else {
