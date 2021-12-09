@@ -18,6 +18,7 @@
             exit();
         }
 
+        /*
         $mysqli = mysqli_connect($server, $user, $pass, $basededatos);
 
         if (!$mysqli){
@@ -33,6 +34,24 @@
         }
 
         mysqli_close($mysqli);
+        */
+
+        // PDO
+        try{
+            $dsn = "mysql:host=$server;dbname=$basededatos";
+            $dbh = new PDO($dsn, $user, $pass);
+        } catch (PDOException $e){
+            echo $e->getMessage();
+        }
+        // prepare
+        $stmt = $dbh->prepare("UPDATE users SET estado=? WHERE correo=?");
+        // bind
+        $stmt->bindParam(1, $CambioEstado);
+        $stmt->bindParam(2, $correo);
+        // execute
+        $stmt->execute();
+        // cerrar conexión
+        $dbh = null;
 
         echo "<script>
             window.location.href='HandlingAccounts.php';
