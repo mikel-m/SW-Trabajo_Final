@@ -80,7 +80,7 @@
         // prepare
         $stmt = $dbh->prepare("SELECT * FROM vips");
         // Especificamos el fetch mode antes de llamar a fetch()
-        $stmt->setFetchMode(PDO::FETCH_ASSOC); 
+        $stmt->setFetchMode(PDO::FETCH_OBJ); 
         // execute
         $stmt->execute();
         // mostramos los resultados
