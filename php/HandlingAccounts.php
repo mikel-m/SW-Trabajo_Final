@@ -85,7 +85,7 @@
         // especificamos el fetch
         $stmt->setFetchMode(PDO::FETCH_OBJ);
         // execute
-        $stmt->execite();
+        $stmt->execute();
         // mostrar resultados
         echo '<table style="border:4px solid #c1e9f6;" bgcolor="#9cc4e8" class="questionsTable"><tr> <th> Email </th> <th> Pass </th> <th> Imagen </th> <th> Cambiar Estado </th> <th> Borrar </th><th> Estado </th></tr>';
         while ($row = $stmt->fetch()){
