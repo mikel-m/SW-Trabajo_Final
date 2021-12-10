@@ -117,7 +117,7 @@
         echo $e->getMessage();
       }
       // prepare
-      $stmt = $dbh->prepare("INSERT INTO preguntas(correo, enun, correct, inc1, inc2, inc3, compl, tema, imagen) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+      $stmt = $dbh->prepare("INSERT INTO preguntas (correo, enun, correct, inc1, inc2, inc3, compl, tema, imagen) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
       // bind
       $stmt->bindParam(1, $correo);
       $stmt->bindParam(2, $enun);
