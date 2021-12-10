@@ -78,7 +78,7 @@
           echo $e->getMessage();
         }
         // prepare
-        $stmt = $dbh->prepare("SELECT * from vips");
+        $stmt = $dbh->prepare("SELECT * FROM vips");
         // Especificamos el fetch mode antes de llamar a fetch()
         $stmt->setFetchMode(PDO::FETCH_ASSOC); 
         // execute
