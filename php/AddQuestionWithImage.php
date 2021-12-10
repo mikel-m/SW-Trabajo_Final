@@ -63,13 +63,14 @@
       }
 
 
+      /*
       $mysqli = mysqli_connect($server, $user, $pass, $basededatos);
 
       if (!$mysqli){
         return "<p id='msgBD' style='color:red;'> Ha ocurrido un error inesperado </p> <br> <a href='QuestionFormWithImage.php".$urlBack."'> Volver a la pagina principal </a>";
       }
 
-      /*if(!empty($_FILES['imagenPregunta']['tmp_name'])){
+      if(!empty($_FILES['imagenPregunta']['tmp_name'])){
 
         $path = "../images/preguntas/" . strtotime('now') . "_" . $_FILES['imagenPregunta']['name'];
 
@@ -80,7 +81,7 @@
 
       }else{
         $path = "../images/noimage.png";
-      }*/
+      }
       $path = "../images/placeholder.png";
       $query = "INSERT INTO Preguntas(correo, enun, correct, inc1, inc2, inc3, compl, tema, imagen)
               VALUES ('$correo', '$enun', '$correct', '$inc1', '$inc2', '$inc3', '$compl', '$tema', '$path')";
@@ -92,7 +93,46 @@
       mysqli_close($mysqli);
 
       return "<p id='msgBD'> La pregunta se guarda correctamente en la Base de Datos</p><br>";
+      */
 
+
+      // PDO
+      if(!empty($_FILES['imagenPregunta']['tmp_name'])){
+
+        $path = "../images/preguntas/" . strtotime('now') . "_" . $_FILES['imagenPregunta']['name'];
+
+        if(!move_uploaded_file($_FILES['imagenPregunta']['tmp_name'], $path)) {
+          return "<p id='msgBD' style='color:red;'>Error al subir la imagen, porfavor introduzca la pregunta de nuevo </p> <br> <a href='QuestionFormWithImage.php".$urlBack."'> Insertar pregunta </a>";
+
+        }
+
+      }else{
+        $path = "../images/noimage.png";
+      }
+      $path = "../images/placeholder.png";
+      try{
+        $dsn = "mysql:host$server;dbname=$basededatos";
+        $dbh = new PDO($dsn, $user, $pass);
+      } catch (PDOException $e){
+        echo $e->getMessage();
+      }
+      // prepare
+      $stmt = $dbh->prepare("INSERT INTO Preguntas(correo, enun, correct, inc1, inc2, inc3, compl, tema, imagen) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+      // bind
+      $stmt->bindParam(1, $correo);
+      $stmt->bindParam(2, $enun);
+      $stmt->bindParam(3, $correct);
+      $stmt->bindParam(4, $inc1);
+      $stmt->bindParam(5, $inc2);
+      $stmt->bindParam(6, $inc3);
+      $stmt->bindParam(7, $compl);
+      $stmt->bindParam(8, $tema);
+      $stmt->bindParam(9, $path);
+      // execute
+      $stmt->execute();
+      // cerrar conexión
+      $dbh = null;
+      return "<p id='msgBD'> La pregunta se guarda correctamente en la Base de Datos</p><br>";
     }
 
     function insertarPreguntaXML(){
