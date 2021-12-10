@@ -39,6 +39,7 @@
         }
       </style>
       <?php
+      /*
         //Conectamos con la base de datos mysql
         include 'DbConfig.php';
         $conn = mysqli_connect($server, $user, $pass, $basededatos);
@@ -65,6 +66,36 @@
 
         }
         echo "</table>";
+        */
+
+
+        // PDO
+        include 'DbConfig.php';
+        try{
+          $dsn = "mysql:host=$server;dbname=$basededatos";
+          $dbh = new PDO($dsn, $user, $pass);
+        } catch (PDOException $e){
+          echo $e->getMessage();
+        }
+        // prepare
+        $stmt = $dbh->prepare("SELECT * from vips");
+        // Especificamos el fetch mode antes de llamar a fetch()
+        $stmt->setFetchMode(PDO::FETCH_ASSOC); 
+        // execute
+        $stmt->execute();
+        // mostramos los resultados
+        echo "<table " . " bgcolor=" . "'#9cc4e8'" . ">";
+        echo "<tr>
+        <th>Correo</th>
+        </tr>";
+        while ($row = $stmt->fetch()){
+          echo
+          "<tr>
+          <td>" . $row->email . "</td></tr>";
+        }
+        echo "</table>";
+        // cerrar conexión
+        $dbh = null;
         ?>
     </div>
   </section>
