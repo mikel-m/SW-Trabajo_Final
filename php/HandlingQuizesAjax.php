@@ -37,11 +37,11 @@
         }
         // Preguntas totales
         echo '<caption style="text-align:left">';
-          echo '<td align="left"><h1>Número de preguntas TOTALES: ' . $preguntasTotales . '</h1><br>';
+          echo '<td align="left"><h2>Número de preguntas TOTALES: ' . $preguntasTotales . '</h2><br>';
         echo '</caption>';
         // Preguntas del usuario
         echo '<caption style="text-align:left">';
-          echo '<td align="left"><h1>Preguntas de ' . $_SESSION['correo'] . ': ' . $preguntasUsuario . '</h1><br><br>';
+          echo '<td align="left"><h2>Preguntas de ' . $_SESSION['correo'] . ': ' . $preguntasUsuario . '</h2><br><br>';
         echo '</caption>';
         ?>
         
