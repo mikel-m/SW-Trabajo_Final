@@ -17,7 +17,7 @@
             height: 100%;
           }
         </style>
-        <form id="flogin" name="flogin" action="LogIn.php" method="POST" actionstyle="width: 60%; margin: 0px auto;">
+        <form id="cpass" name="cpass" action="LogIn.php" method="POST" actionstyle="width: 60%; margin: 0px auto;">
           <table style="border:4px solid #c1e9f6;" bgcolor="#9cc4e8">
             <caption style="text-align:left">
               <h2>Restablecer contraseña</h2> 
