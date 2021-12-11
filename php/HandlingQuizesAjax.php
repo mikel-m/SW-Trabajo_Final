@@ -23,6 +23,23 @@
             height: 100%;
           }
         </style>
+
+        <?php
+        $json = file_get_contents('../json/Questions.json');
+        $jsonarr = json_decode($json);
+        $preguntasTotales = 0;
+        $preguntasUsuario = 0;
+        foreach ($jsonarr->assessmentItems as $pregunta){
+          $preguntasTotales = $preguntasTotales + 1;
+          if (strcmp($pregunta->author, $_SESSION['correo']) == 0){
+            $preguntasUsuario = $preguntasUsuario + 1;
+          }
+        }
+        // Preguntas totales
+        echo '<h1>Número de preguntas TOTALES: ' . $preguntasTotales . '</h1><br>';
+        // Preguntas del usuario
+        echo '<h1>Preguntas de ' . $_SESSION['correo'] . ': ' . $preguntasUsuario . '</h1><br><br>';
+        ?>
         
         <form id="fquestion" name="fquestion" action="AddQuestionWithImage.php?correo=<?php echo $_GET["correo"]; ?>" enctype="multipart/form-data"  method = "POST" onsubmit = "return validacion()" actionstyle="width: 60%; margin: 0px auto;">
         
