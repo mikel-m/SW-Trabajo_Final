@@ -48,8 +48,9 @@
 
 
   <?php }else { ?>
-  <span><a href="Layout.php"> Inicio</a></span>
+  <span><a href="Layout.php">Inicio</a></span>
   <span><a href="Credits.php">Creditos</a></span>
+  <span><a href="RecuperarPassword.php">Restablecer contraseña</a></span>
   <?php }?>
    
 </nav>
