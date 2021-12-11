@@ -36,16 +36,20 @@
           }
         }
         // Preguntas totales
-        echo '<td align="left"><h1>Número de preguntas TOTALES: ' . $preguntasTotales . '</h1><br>';
+        echo '<caption style="text-align:left">';
+          echo '<td align="left"><h1>Número de preguntas TOTALES: ' . $preguntasTotales . '</h1><br>';
+        echo '</caption>';
         // Preguntas del usuario
-        echo '<td align="left"><h1>Preguntas de ' . $_SESSION['correo'] . ': ' . $preguntasUsuario . '</h1><br><br>';
+        echo '<caption style="text-align:left">';
+          echo '<td align="left"><h1>Preguntas de ' . $_SESSION['correo'] . ': ' . $preguntasUsuario . '</h1><br><br>';
+        echo '</caption>';
         ?>
         
         <form id="fquestion" name="fquestion" action="AddQuestionWithImage.php?correo=<?php echo $_GET["correo"]; ?>" enctype="multipart/form-data"  method = "POST" onsubmit = "return validacion()" actionstyle="width: 60%; margin: 0px auto;">
         
         <table style="border:4px solid #c1e9f6;" bgcolor="#9cc4e8">
             <caption style="text-align:left">
-              <h2>Pregunta para el quiz</h2> 
+              <h3>Pregunta para el quiz</h3> 
             </caption>
             <tr>
               <td align="right">Dirección de correo (*): </td>
