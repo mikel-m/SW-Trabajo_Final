@@ -57,15 +57,15 @@
                     // ejecutamos
                     $stmt->execute();
                     $row = $stmt->fetch();
-                    if (row->correo!=$correo){
-                        $dbh = null;
-                        echo "<h3>El correo no existe. :(</h3>";
-                        echo "<br>";
-                    } else {
+                    if (row->correo==$correo){
                         $dbh = null;
                         echo '<script>
                             window.location.href="CodigoVerificacion.php?correo='. $correo . '";
                             </script>';
+                    } else {
+                      $dbh = null;
+                      echo "<h3>El correo no existe. :(</h3>";
+                      echo "<br>";
                     }
                   }
               }
