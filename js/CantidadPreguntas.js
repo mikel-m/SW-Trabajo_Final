@@ -19,7 +19,7 @@ function numQuestions(){
             });
             preguntasTotales+=cantTotales+'</h2><br></caption>';
     
-            document.getElementById('mostrar-Preguntas').innerHTML=preguntasTotales;
+            document.getElementById('mostrar-Cantidad').innerHTML=preguntasTotales;
         }
     });
 }
