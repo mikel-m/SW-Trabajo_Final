@@ -25,6 +25,7 @@
         </style>
 
         <?php
+        /*
         $json = file_get_contents('../json/Questions.json');
         $jsonarr = json_decode($json);
         $preguntasTotales = 0;
@@ -43,6 +44,7 @@
         echo '<caption style="text-align:left">';
           echo '<td align="left"><h2>Preguntas de ' . $_SESSION['correo'] . ': ' . $preguntasUsuario . '</h2><br><br>';
         echo '</caption>';
+        */
         ?>
         
         <form id="fquestion" name="fquestion" action="AddQuestionWithImage.php?correo=<?php echo $_GET["correo"]; ?>" enctype="multipart/form-data"  method = "POST" onsubmit = "return validacion()" actionstyle="width: 60%; margin: 0px auto;">
