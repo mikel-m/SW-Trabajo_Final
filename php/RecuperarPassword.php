@@ -40,7 +40,7 @@
                 if ($correo == ""){
                     echo "<h3>Debes introducir una dirección de correo.</h3>";
                     echo "<br>";
-                    echo "<a href='RecuperarPassword.php'>";
+                    //echo "<a href='RecuperarPassword.php'>";
                 } else {
                     include 'DbConfig.php';
                     try{
