@@ -24,7 +24,7 @@
             </caption>
             <tr>
               <td align="right">Dirección de correo: </td>
-              <td align="left"><input style="width: 600px;" type="text" id="correo" name="correo" autofocus></td>
+              <td align="left"><input type="text" id="correo" name="correo" autofocus></td>
             </tr>
             <tr>
             <td></td>                               <!-- NO VALIDA SIMPLEMENTE EJECUTA EL SCRIPT-->

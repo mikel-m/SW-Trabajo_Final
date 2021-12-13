@@ -46,7 +46,7 @@
                     echo "<h3>Debes introducir el código de verificación.</h3>";
                     echo "<br>";
                 } else {
-                    if (strcmp($mensaje, $codigo) == 0){
+                    if ($mensaje==$codigo){
                         echo '<script type="text/javascript"> alert("Código de verificación correcto");
                           window.location.href="ChangePassword.php?correo='. $para . '";
                           </script>';
