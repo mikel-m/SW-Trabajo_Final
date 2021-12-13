@@ -110,6 +110,9 @@
             <td></td>
               <td align="left"><input type="button" id="mostrarPreguntas" name="mostrarPreguntas" value="Mostrar preguntas" onClick="showQuestions()"></td>
             </tr>
+            <td></td>
+              <td align="left"><input type="button" id="cantPreguntas" name="cantPreguntas" value="Mostrar cantidad de preguntas" onClick="numQuestions()"></td>
+            </tr>
           </table>
         </form>
     </div>
