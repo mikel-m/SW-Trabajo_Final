@@ -47,19 +47,19 @@
       $inc3 = $_POST['inc3'];
       $compl = $_POST['dif'];
       $tema = $_POST['tema'];
-      $urlBack = "?correo=".$correo;
+      //$urlBack = "?correo=".$correo;
 
 
       // Validacion de tipo de usuario
       $esAlumno = preg_match("/^[a-z]+\\d{3}@ikasle\.ehu\.(eus|es)$/", $correo);
       $esProfesor = preg_match("/^([a-z]+\.)?[a-z]+@ehu\.(eus|es)$/", $correo);
       if(!($esAlumno || $esProfesor)){
-        return "<p id='msgBD' style='color:red;'> El email no es valido </p> <br> <a href='QuestionFormWithImage.php".$urlBack."'> Volver a la pagina principal </a>";
+        return "<p id='msgBD' style='color:red;'> El email no es valido </p> <br> <a href='QuestionFormWithImage.php'> Volver a la pagina principal </a>";
       }
 
       //Validacion campos vacios
       if($correo=="" || $enun=="" || $correct=="" || $inc1=="" || $inc2=="" || $inc3=="" || $tema==""){
-        return "<p id='msgBD' style='color:red;'> No puedes haber ningun campo vacio </p> <br> <a href='QuestionFormWithImage.php".$urlBack."'> Volver a la pagina principal </a>";
+        return "<p id='msgBD' style='color:red;'> No puedes haber ningun campo vacio </p> <br> <a href='QuestionFormWithImage.php'> Volver a la pagina principal </a>";
       }
 
 
@@ -102,7 +102,7 @@
         $path = "../images/preguntas/" . strtotime('now') . "_" . $_FILES['imagenPregunta']['name'];
 
         if(!move_uploaded_file($_FILES['imagenPregunta']['tmp_name'], $path)) {
-          return "<p id='msgBD' style='color:red;'>Error al subir la imagen, porfavor introduzca la pregunta de nuevo </p> <br> <a href='QuestionFormWithImage.php".$urlBack."'> Insertar pregunta </a>";
+          return "<p id='msgBD' style='color:red;'>Error al subir la imagen, porfavor introduzca la pregunta de nuevo </p> <br> <a href='QuestionFormWithImage.php'> Insertar pregunta </a>";
 
         }
 

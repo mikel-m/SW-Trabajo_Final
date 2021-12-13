@@ -47,7 +47,7 @@
         */
         ?>
         
-        <form id="fquestion" name="fquestion" action="AddQuestionWithImage.php" enctype="multipart/form-data"  method = "POST" onsubmit = "return validacion()" actionstyle="width: 60%; margin: 0px auto;">
+        <form id="fquestion" name="fquestion" action="AddQuestionWithImage.php?correo=<?php echo $_GET["correo"]; ?>" enctype="multipart/form-data"  method = "POST" onsubmit = "return validacion()" actionstyle="width: 60%; margin: 0px auto;">
         
         <table style="border:4px solid #c1e9f6;" bgcolor="#9cc4e8">
             <caption style="text-align:left">
