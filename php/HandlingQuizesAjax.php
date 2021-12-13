@@ -120,8 +120,8 @@
     </div>
     <!-- https://www.w3schools.com/php/php_ajax_xml.asp -->
     <!-- Mirar este video: https://www.youtube.com/watch?v=M4LaQ3KUGOM -->
-    <div class="table table-bordered table-striped center " id="mostrar-Preguntas"><b>Aqui se mostrará la tabla de las preguntas...</b></div>
     <div class="table table-bordered table-striped center " id="mostrar-Cantidad"><b>Aqui se mostrará la cantidad de preguntas realizadas...</b></div>
+    <div class="table table-bordered table-striped center " id="mostrar-Preguntas"><b>Aqui se mostrará la tabla de las preguntas...</b></div>
 
 
   </section>
