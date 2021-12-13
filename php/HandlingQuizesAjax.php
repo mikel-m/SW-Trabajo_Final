@@ -128,6 +128,8 @@
   <script type="text/javascript" src="../js/RemoveImageInForm.js"></script>
   <script type="text/javascript" src="../js/ValidateFieldsQuestionJQ.js"></script>
 
+  <script type="text/javascript" src="../js/CantidadPreguntas.js"></script>
+
   <!-- scripts del lab 6 -->
   <script type="text/javascript" src="../js/AddQuestionsAjax.js"></script>
   <script type="text/javascript" src="../js/ShowQuestionsAjax.js"></script>
