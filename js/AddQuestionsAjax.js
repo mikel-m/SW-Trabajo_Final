@@ -23,7 +23,7 @@ $(document).ready(function() {
             dataType: "json",
             success: function (data) {
                 alert("Datos enviados correctamente");
-                window.location.href="HandlingQuizesAjax.php";
+                window.location.reload();
                 showQuestions();
             },
         });
