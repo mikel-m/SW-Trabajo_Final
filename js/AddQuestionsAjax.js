@@ -23,8 +23,8 @@ $(document).ready(function() {
             dataType: "json",
             success: function (data) {
                 alert("Datos enviados correctamente");
-                window.location.reload();
                 showQuestions();
+                numQuestions();
             },
         });
         //var xmlhttp = new XMLHttpRequest();

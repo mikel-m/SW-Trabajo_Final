@@ -15,11 +15,16 @@ function numQuestions(){
         success: function(data){
             $(data.assessmentItems).each(function(index,value){
                 cantTotales+=1;
-
+                console.log(value.author);
+                if(value.author == correo){
+                    CantUsuario+=1;
+                }
             });
             preguntasTotales+=cantTotales+'</h2><br></caption>';
+            preguntasUsuario+=CantUsuario+'</h2><br></caption>';
     
             document.getElementById('mostrar-Cantidad').innerHTML=preguntasTotales;
+            document.getElementById('mostrar-Cantidad').innerHTML=preguntasUsuario;
         }
     });
 }
