@@ -22,9 +22,10 @@ function numQuestions(){
             });
             preguntasTotales+=cantTotales+'</h2><br></caption>';
             preguntasUsuario+=CantUsuario+'</h2><br></caption>';
+
+            var result = preguntasTotales+preguntasUsuario;
     
-            document.getElementById('mostrar-Cantidad').innerHTML=preguntasTotales;
-            document.getElementById('mostrar-Cantidad').innerHTML=preguntasUsuario;
+            document.getElementById('mostrar-Cantidad').innerHTML=result;
         }
     });
 }
