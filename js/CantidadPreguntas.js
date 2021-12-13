@@ -14,7 +14,7 @@ function numQuestions(){
         cache : false,
         success: function(data){
             $(data.assessmentItems).each(function(index,value){
-                cantTotales = cantTotales + 1;
+                cantTotales+=1;
 
             });
             preguntasTotales+=cantTotales+'</h2><br></caption>';
