@@ -50,11 +50,11 @@
         //Validación del registro en el servidor
         if (isset($_POST['changePass'])){ 
             $correo = $_SESSION['correo']; 
-            $pass = $_POST['passAct'];
+            $password = $_POST['passAct'];
             $newpass1 = $_POST['newPass1'];
             $newpass2 = $_POST['newPass2'];
             
-            if($pass == ""){
+            if($password == ""){
                 echo "<h3>Debes introducir todos los campos.</h3>";
                 echo "<br>";
             }
@@ -93,14 +93,11 @@
                 // Execute
                 $stmt->execute();
                 $row = $stmt->fetch();
-                if (password_verify($pass, $row->pass) == 1){
+                if (password_verify($password, $row->pass) == 1){
                     $correcto = "true";
                 } else {
                     echo "<h3>La contraseña es incorrecta.</h3>";
                     echo "<br>";
-                    echo "<h3>pass: " . $pass . "</h3><br>";
-                    echo "<h3>row->pass: " . $row->pass . "</h3><br>";
-                    echo "<h3>pass verify: " . password_verify($pass, $row->pass) . "</h3><br>";
                 }
                 // cerrar conexión
                 $dbh = null;
