@@ -48,12 +48,7 @@
         </form>
         <?php
         //Validación del registro en el servidor
-        if (isset($_POST['changePass'])){
-            $correo = "";
-            $pass = "";
-            $newpass1 = "";
-            $newpass2 = "";
-                
+        if (isset($_POST['changePass'])){ 
             $correo = $_SESSION['correo']; 
             $pass = $_POST['passAct'];
             $newpass1 = $_POST['newPass1'];
@@ -101,7 +96,7 @@
                 if (password_verify($pass, $row->pass) == 1){
                     $correcto = "true";
                 } else {
-                    echo "<h3>La contraseñad es incorrecta.</h3>";
+                    echo "<h3>La contraseña es incorrecta.</h3>";
                     echo "<br>";
                 }
                 // cerrar conexión
