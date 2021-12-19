@@ -98,6 +98,7 @@
                 } else {
                     echo "<h3>La contraseña es incorrecta.</h3>";
                     echo "<br>";
+                    echo password_verify($pass, $row->pass);
                 }
                 // cerrar conexión
                 $dbh = null;
