@@ -97,13 +97,12 @@
                 $stmt->setFetchMode(PDO::FETCH_OBJ); 
                 // Execute
                 $stmt->execute();
-                while ($row = $stmt->fetch()){
-                    if ($pass == $row->pass){
-                        $correcto = "true";
-                    } else {
-                        echo "<h3>La contraseñad es incorrecta.</h3>";
-                        echo "<br>";
-                    }
+                $row = $stmt->fetch();
+                if (password_verify($pass, $row->pass) == 1){
+                    $correcto = "true";
+                } else {
+                    echo "<h3>La contraseñad es incorrecta.</h3>";
+                    echo "<br>";
                 }
                 // cerrar conexión
                 $dbh = null;
@@ -117,13 +116,14 @@
                     // prepare
                     $stmt = $dbh->prepare("UPDATE users SET pass=? WHERE correo=?");
                     // bind
-                    $stmt->bindParam(1, $newpass1);
+                    $hash = password_hash($newpass1, PASSWORD_DEFAULT);
+                    $stmt->bindParam(1, $hash);
                     $stmt->bindParam(2, $correo);
                     // Excecute
                     $stmt->execute();
                     // cerrar conexión
                     $dbh = null;
-                    echo '<script type="text/javascript"> alert("Se ha cambiado la contraseña correctamente.");
+                    echo '<script type="text/javascript"> alert("La contraseña se ha cambiado correctamente.");
                          window.location.href="Layout.php";
                       </script>';
                 }
