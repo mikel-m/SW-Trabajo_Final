@@ -20,6 +20,7 @@
     if($tipo == 'prof'){?>
       <span><a href="Layout.php"> Inicio</a></span>
       <span><a href="Credits.php">Creditos</a></span>
+      <span><a href="CambiarPass.php">Cambiar contraseña</a></span>
       <span><a href="HandlingQuizesAjax.php"> Insertar Pregunta </a></span>
       <span><a href="ShowQuestionsWithImage.php"> Ver Preguntas </a></span>
       <span><a href="ShowXMLQuestionsWithImage.php"> Ver Preguntas XML</a></span>
@@ -32,6 +33,7 @@
     if($tipo == 'alu'){ ?>
       <span><a href="Layout.php"> Inicio</a></span>
       <span><a href="Credits.php">Creditos</a></span>
+      <span><a href="CambiarPass.php">Cambiar contraseña</a></span>
       <span><a href="HandlingQuizesAjax.php"> Insertar Pregunta </a></span>
       <span><a href="ShowQuestionsWithImage.php"> Ver Preguntas </a></span>
       <span><a href="ShowXMLQuestionsWithImage.php"> Ver Preguntas XML</a></span>
